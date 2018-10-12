@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sing Up</title>
+
+	<style type="text/css" media="screen">
+	
+	div{
+		margin-top: 20px;
+		}
+	</style>
+	
+
+</head>
+<body>
+
+	<section>
+		<header id="header">
+			<h3>Sing Up</h3>
+		</header>
+		<form action="" method="post" accept-charset="utf-8">
+		
+		<div>
+			First name:
+			<input type="text" id="first_name" name="first_name" value="" placeholder="First name" required="">
+		</div>
+		<div>
+			Last name:
+			<input type="text" id="last_name" name="last_name" value="" placeholder="Last name" required="">
+		</div>
+		<div>
+			Email:
+			<input type="email" id="email" name="email" value="" placeholder="Email" required="">
+		</div>
+		<div>
+			Birthday:
+			<input type="date" id="birthday" name="birthday" value="" placeholder="Birthday" required="">
+		</div>
+		<div>
+			Favourite sport:
+		<select id="sport" name="sport" required="">
+			<option value="football">Football</option>
+			<option value="tennis">Tennis</option>
+			<option value="basketball">Basketball</option>
+			<option value="hockey">Hockey</option>
+			<option value="voleyball">Voleyball</option>
+		</select>
+		</div>
+		<div>
+			Small bio: 
+			<div>
+			<textarea id="bio" name="bio" required="" rows="10" cols="70" maxlength="500" placeholder="Write your bio!"></textarea>
+		</div>
+		</div>
+		<div>
+			<input type="submit" id="btn_submit" name="btn_submit" value="Sing Up">
+			<input type="reset" id="btn_reset" name="btn_reset" value="Clear">
+		</div>
+		</form>
+	
+	</section>
+	
+</body>
+</html>
