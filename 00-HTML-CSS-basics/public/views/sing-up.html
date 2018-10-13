@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="description" content="Sing up">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Sing Up</title>
 
-	<style type="text/css" media="screen">
+	<style>
 	
 	div{
 		margin-top: 20px;
@@ -19,27 +22,28 @@
 		<header id="header">
 			<h3>Sing Up</h3>
 		</header>
-		<form action="" method="post" accept-charset="utf-8">
+		<form action="#" method="post" accept-charset="utf-8">
 		
 		<div>
-			First name:
+			<label for="first_name">First name:</label>
 			<input type="text" id="first_name" name="first_name" value="" placeholder="First name" required="">
 		</div>
 		<div>
-			Last name:
+			<label for="last_name">Last name:</label>
 			<input type="text" id="last_name" name="last_name" value="" placeholder="Last name" required="">
 		</div>
 		<div>
-			Email:
+			<label for="email">Email:</label>
 			<input type="email" id="email" name="email" value="" placeholder="Email" required="">
 		</div>
 		<div>
-			Birthday:
-			<input type="date" id="birthday" name="birthday" value="" placeholder="Birthday" required="">
+			<label for="birthday">Birthday:</label>
+			<input type="date" id="birthday" name="birthday" value="" required="">
 		</div>
 		<div>
-			Favourite sport:
+			<label for="sport">Favourite Sport:</label>
 		<select id="sport" name="sport" required="">
+			<option value="">Choose a sport</option>
 			<option value="football">Football</option>
 			<option value="tennis">Tennis</option>
 			<option value="basketball">Basketball</option>
@@ -48,7 +52,7 @@
 		</select>
 		</div>
 		<div>
-			Small bio: 
+			<label for="bio">Small bio:</label> 
 			<div>
 			<textarea id="bio" name="bio" required="" rows="10" cols="70" maxlength="500" placeholder="Write your bio!"></textarea>
 		</div>
