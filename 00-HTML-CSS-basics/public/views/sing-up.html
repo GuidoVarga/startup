@@ -18,23 +18,23 @@
 </head>
 <body>
 
-	<section>
-		<header id="header">
+	<section role="region">
+		<header id="header" role="presentation">
 			<h3>Sing Up</h3>
 		</header>
-		<form action="#" method="post" accept-charset="utf-8">
+		<form action="#" method="post" accept-charset="utf-8" role="none">
 		
 		<div>
 			<label for="first_name">First name:</label>
-			<input type="text" id="first_name" name="first_name" value="" placeholder="First name" required="">
+			<input type="text" id="first_name" name="first_name" value="" placeholder="First name" role="textbox" required="">
 		</div>
 		<div>
 			<label for="last_name">Last name:</label>
-			<input type="text" id="last_name" name="last_name" value="" placeholder="Last name" required="">
+			<input type="text" id="last_name" name="last_name" value="" placeholder="Last name" role="textbox" required="">
 		</div>
 		<div>
 			<label for="email">Email:</label>
-			<input type="email" id="email" name="email" value="" placeholder="Email" required="">
+			<input type="email" id="email" name="email" value="" placeholder="Email" role="textbox" required="">
 		</div>
 		<div>
 			<label for="birthday">Birthday:</label>
@@ -42,7 +42,7 @@
 		</div>
 		<div>
 			<label for="sport">Favourite Sport:</label>
-		<select id="sport" name="sport" required="">
+		<select id="sport" name="sport" required="" role="combobox">
 			<option value="">Choose a sport</option>
 			<option value="football">Football</option>
 			<option value="tennis">Tennis</option>
@@ -54,12 +54,12 @@
 		<div>
 			<label for="bio">Small bio:</label> 
 			<div>
-			<textarea id="bio" name="bio" required="" rows="10" cols="70" maxlength="500" placeholder="Write your bio!"></textarea>
+			<textarea id="bio" name="bio" required="" rows="10" cols="70" maxlength="500" placeholder="Write your bio!" role="textbox"></textarea>
 		</div>
 		</div>
 		<div>
-			<input type="submit" id="btn_submit" name="btn_submit" value="Sing Up">
-			<input type="reset" id="btn_reset" name="btn_reset" value="Clear">
+			<input type="submit" id="btn_submit" name="btn_submit" value="Sing Up" role="button">
+			<input type="reset" id="btn_reset" name="btn_reset" value="Clear" role="button">
 		</div>
 		</form>
 	
