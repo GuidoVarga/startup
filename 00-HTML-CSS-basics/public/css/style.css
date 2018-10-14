@@ -1,4 +1,4 @@
-html{
+*{
 	font-family: arial;
 }
 header,footer,aside,nav{
@@ -8,4 +8,3 @@ header,footer,aside,nav{
 header,footer{
 	text-align: center;
 }
-
