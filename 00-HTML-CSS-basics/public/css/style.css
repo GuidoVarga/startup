@@ -1,10 +1,86 @@
 *{
-	font-family: arial;
-}
-header,footer,aside,nav{
-	background-color: red;
+	box-sizing: border-box;
+ margin-right: auto;
+ margin-left: auto;
 }
 
-header,footer{
-	text-align: center;
+div#container{
+		box-sizing: border-box; 
+		box-align: center;
+		height: 600px;
+		width: 90%;
+		
 }
+
+.sidebar{
+	float: right;
+	font-size: 10px;
+
+	height: 100%;
+	width: 19%;
+	margin-left: 20px;
+}
+
+.navigation{
+	float: left;
+	font-size: 12px;
+	margin-right:  20px;
+	height: 100%;
+	width: 15%;
+}
+
+.navigation a{
+	color: white;
+}
+
+.header{
+	text-align: center;
+
+	font-size: 46px;
+	width: 90%;
+	
+}
+
+
+
+.footer{
+	font-size: 10px;
+	text-align: center;
+	width: 90%;
+	height: 150px;
+}
+
+
+
+.content .footer{
+
+	background-color: red !important;
+	margin-left:20px;
+	margin-right:20px;
+	height: 50px;
+
+}
+
+.content .header{
+	margin-left:20px;
+	margin-right:20px;
+}
+
+
+.content{
+	display: block;
+	font-size: 14px;
+	width: 70%;
+	
+}
+
+
+
+[class$="r"]{
+	background-color: magenta;
+}
+
+[class*="a"]:not([class$="r"]){
+	background-color: blue;
+}
+
