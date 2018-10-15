@@ -6,6 +6,7 @@
 
 
 
+
 div#container{
 		box-sizing: border-box; 
 	
@@ -79,14 +80,14 @@ div#container{
 
 .content article{
 	position: absolute;
-	margin-top: 80px;
+	margin-top: 70px;
 	word-wrap: break-word;
 
 }
 
-.content .footer{
+.content.footer{
 	position: absolute;
-	
+	margin-top: 10px;
 	bottom: 0;
 	width: 100%;
 
