@@ -1,32 +1,36 @@
 *{
-	box-sizing: border-box;
+	
  margin-right: auto;
  margin-left: auto;
 }
 
+
+
 div#container{
 		box-sizing: border-box; 
-		box-align: center;
-		height: 600px;
+	
+		height: 900px;
 		width: 90%;
-		
+		overflow: hidden;
+		min-width: 879px;
 }
 
 .sidebar{
 	float: right;
 	font-size: 10px;
 
-	height: 100%;
-	width: 19%;
+	height: 70%;
+	width: 17%;
 	margin-left: 20px;
 }
 
 .navigation{
 	float: left;
+	margin-bottom:20px;
 	font-size: 12px;
 	margin-right:  20px;
-	height: 100%;
-	width: 15%;
+	height: 70%;
+	width: 17%;
 }
 
 .navigation a{
@@ -34,45 +38,75 @@ div#container{
 }
 
 .header{
+	
 	text-align: center;
-
 	font-size: 46px;
-	width: 90%;
+	width: 100%;
+	
+}
+
+.clear{
+	clear: both;
+}
+
+
+.footer{
+	margin-top: 20px;
+	font-size: 10px;
+	text-align: center;
+	width: 100%;
 	
 }
 
 
-
-.footer{
-	font-size: 10px;
-	text-align: center;
-	width: 90%;
+.footer:not(#section-footer){
 	height: 150px;
 }
 
+.content{
 
+	margin-left: 17.5%;
+	text-align: center;
+	position: relative;
+	display: block;
+	font-size: 14px;
+	width: 65%;
+	height: 70%;
+
+	
+
+}
+
+.content article{
+	position: absolute;
+	margin-top: 80px;
+	word-wrap: break-word;
+
+}
 
 .content .footer{
-
-	background-color: red !important;
-	margin-left:20px;
-	margin-right:20px;
-	height: 50px;
+	position: absolute;
+	
+	bottom: 0;
+	width: 100%;
 
 }
 
 .content .header{
-	margin-left:20px;
-	margin-right:20px;
+	position: absolute;
+	height: 60px;
+	width: 100%;
+
+}
+
+.content .header h4{
+	position: absolute;
+	top:0;
+	left: 0;
 }
 
 
-.content{
-	display: block;
-	font-size: 14px;
-	width: 70%;
-	
-}
+
 
 
 
