@@ -4,10 +4,7 @@
  margin-left: auto;
 }
 
-
-
-
-div#container{
+div#container {
 		box-sizing: border-box; 
 	
 		height: 900px;
@@ -16,7 +13,7 @@ div#container{
 		min-width: 879px;
 }
 
-.sidebar{
+.sidebar {
 	float: right;
 	font-size: 10px;
 
@@ -25,7 +22,7 @@ div#container{
 	margin-left: 20px;
 }
 
-.navigation{
+.navigation {
 	float: left;
 	margin-bottom:20px;
 	font-size: 12px;
@@ -34,11 +31,11 @@ div#container{
 	width: 17%;
 }
 
-.navigation a{
+.navigation a {
 	color: white;
 }
 
-.header{
+.header {
 	
 	text-align: center;
 	font-size: 46px;
@@ -46,12 +43,12 @@ div#container{
 	
 }
 
-.clear{
+.clear {
 	clear: both;
 }
 
 
-.footer{
+.footer {
 	margin-top: 20px;
 	font-size: 10px;
 	text-align: center;
@@ -60,11 +57,11 @@ div#container{
 }
 
 
-.footer:not(#section-footer){
+.footer:not(#section-footer) {
 	height: 150px;
 }
 
-.content{
+.content {
 
 	margin-left: 17.5%;
 	text-align: center;
@@ -73,19 +70,16 @@ div#container{
 	font-size: 14px;
 	width: 65%;
 	height: 70%;
-
-	
-
 }
 
-.content article{
+.content article {
 	position: absolute;
 	margin-top: 70px;
 	word-wrap: break-word;
 
 }
 
-.content.footer{
+.content.footer {
 	position: absolute;
 	margin-top: 10px;
 	bottom: 0;
@@ -93,14 +87,14 @@ div#container{
 
 }
 
-.content .header{
+.content .header {
 	position: absolute;
 	height: 60px;
 	width: 100%;
 
 }
 
-.content .header h4{
+.content .header h4 {
 	position: absolute;
 	top:0;
 	left: 0;
@@ -111,11 +105,11 @@ div#container{
 
 
 
-[class$="r"]{
+[class$="r"] {
 	background-color: magenta;
 }
 
-[class*="a"]:not([class$="r"]){
+[class*="a"]:not([class$="r"]) {
 	background-color: blue;
 }
 
