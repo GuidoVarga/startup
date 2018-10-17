@@ -1,16 +1,33 @@
-*{
-	
- margin-right: auto;
- margin-left: auto;
+/* Small screens (default) */
+html { 
+	font-size: 100%; 
+	min-width: 40rem;
+}
+
+/* Medium screens (640px) */
+@media (min-width: 40rem) { 
+  	html { font-size: 112%; }
+}
+
+/* Large screens (1024px) */
+@media (min-width: 64rem) { 
+ 	 html { font-size: 120%; }
+}
+
+*, *:before, *:after {
+  	-moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+ 	 box-sizing: border-box;
 }
 
 .container {
-	box-sizing: border-box; 
+	box-sizing: content-box;
 	background-color: white !important;
-	height: 900px;
+	max-width: 70rem;
 	width: 90%;
-	overflow: hidden;
-	min-width: 879px;
+	margin: 0 auto;
+	clear: both;
+	position: relative;
 }
 
 .sidebar {
@@ -26,8 +43,11 @@
 	margin-bottom:20px;
 	font-size: 12px;
 	margin-right:  20px;
-	height: 70%;
 	width: 17%;
+}
+
+@media (max-width: 800px) { 
+ 	.navigation { font-size: 50%; }
 }
 
 .navigation a {
@@ -46,36 +66,25 @@
 	clear: both;
 }
 
-
 .footer {
 	margin-top: 20px;
 	font-size: 10px;
 	text-align: center;
 	width: 100%;
-	
 }
 
 
 .footer:not(#section-footer) {
-	height: 150px;
+	height: 60px;
 }
 
 .content {
-
 	margin-left: 17.5%;
 	text-align: center;
 	position: relative;
 	display: block;
 	font-size: 14px;
 	width: 65%;
-	height: 70%;
-}
-
-.content article {
-	position: absolute;
-	margin-top: 70px;
-	word-wrap: break-word;
-
 }
 
 .content.footer {
@@ -83,14 +92,12 @@
 	margin-top: 10px;
 	bottom: 0;
 	width: 100%;
-
 }
 
 .content .header {
 	position: absolute;
 	height: 60px;
 	width: 100%;
-
 }
 
 .content .header h4 {
@@ -107,3 +114,14 @@
 	background-color: blue;
 }
 
+table,thead, tbody, th, td {
+	border: 1px solid black;
+}
+
+table{
+	width: 50%;
+}
+
+.div-form {
+	margin-top: 20px;
+}
