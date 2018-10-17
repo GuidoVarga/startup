@@ -33,7 +33,10 @@ html {
 
 .hidden-section.fade { opacity: 0;}
 
-.content {text-align: center;}	/*or section{ text-align: center; }
+.content {
+	text-align: center;
+	margin-bottom: 20px;
+}	/*or section{ text-align: center; }
 
 
 
