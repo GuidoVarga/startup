@@ -39,6 +39,11 @@ html {
 	margin-bottom: 20px;
 }	/*or section{ text-align: center; }*/
 
+.content article {
+	text-align: center;
+	padding-top: 20px;
+}
+
 .clear {
 	clear: both;
 }
@@ -50,4 +55,14 @@ html {
 
 .aside ul{
 	text-align: left;
+}
+
+
+.content table,thead, tbody, th, td {
+	border: 1px solid black;
+}
+
+.content table {
+
+	width: 100%;
 }

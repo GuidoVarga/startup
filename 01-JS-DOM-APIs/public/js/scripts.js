@@ -80,7 +80,7 @@ const getRepositories = (repo) => {
 		let response=JSON.parse(data.response);
 		console.log(response);
 		showRepositories(response.items);
-		
+
 	}, status => {
 		console.log(status);
 	})
@@ -122,4 +122,48 @@ const showRepositories = (data) => {
 document.getElementById('button-repos').onclick = () => {
 	let repo = document.getElementById('input-repo').value;	
 	getRepositories(repo);
+}
+
+document.getElementById('button-matrix').onclick = () => {
+	let data = document.getElementById('input-matrix').value;
+	let matriz=createMatrix(data);
+	createTable(matriz);
+}
+
+
+const createMatrix = (data) => {
+
+	let array = data.split('/');
+	let matriz = [];
+
+	for(let i = 0; i<array.length; i++){
+		matriz[i]=array[i].split('-');
+	}
+
+	return matriz;
+};
+
+const createTable = (matrix) => {
+
+	let article=document.getElementById('table-article');
+	article.innerHTML="";
+	let table = document.createElement('table');
+	let tableBody = document.createElement('tbody');
+	let tr;
+	let td;
+	let text;
+	for(let i = 0 ; i < matrix.length ; i++){
+
+		tr = document.createElement('tr');
+
+		for(let j = 0 ; j < matrix[i].length ; j++){
+			td = document.createElement('td');
+			text = document.createTextNode(matrix[i][j]);
+			td.appendChild(text);
+			tr.appendChild(td);
+		}
+		tableBody.appendChild(tr);
+	}
+	table.appendChild(tableBody);
+	article.appendChild(table);
 }
