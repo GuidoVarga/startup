@@ -10,30 +10,42 @@ document.getElementById('button-jokes').onclick = function () {
 	getJoke();
 } //I'm not sure if there should be a semicolon here
 
-const getRequest = (url,callback) => {
+const request = (config) => {
+	return new Promise( (resolve,reject) => {
 
-	let request = window.ActiveXObject ?
-	new ActiveXObject('Microsoft.XMLHTTP') :
-	new XMLHttpRequest;
-
-	request.onload = () => {
-		if(request.status == 200){
-			callback(request, request.status);
+		let xhr = new XMLHttpRequest;
+		xhr.open('GET', config.url, true);
+		
+		if(config.headers){
+			Object.keys(config.headers).forEach( key => {
+				xhr.setRquestHeader(key, config.headers[key]);
+			});
 		}
-		else{
-			alert('error:' + request.status);
-		}
-	};
-	request.onerror = () => {
-		alert('error:' + request.status);
-	}
 
-	request.open('GET',url,true);
-	request.send(null);
+		xhr.onload = () =>{
+
+			if(xhr.status>= 200 && xhr.status<300){
+				resolve(xhr);
+			}
+			else{
+				reject(xhr.status);
+			}
+		};
+
+		xhr.onerror = () => reject(xhr.status);
+		xhr.send(xhr.body);
+
+	});
 };
 
 const getJoke = () => {
-	getRequest('http://api.icndb.com/jokes/random', (data) => {
+
+	let config = {
+		url:'http://api.icndb.com/jokes/random'
+	};
+
+	request(config)
+	.then( data => {
 
 		let response = JSON.parse(data.response);
 		let joke = response['value']['joke'];
@@ -43,5 +55,21 @@ const getJoke = () => {
 		let content = document.createTextNode(joke);
 		h4.appendChild(content);
 		article.appendChild(h4);
+
+	}, status => {
+		console.log(status);
+		alert(status);
+		if(status>=500 && status<600){
+			paintElement('joke-section','red');
+		}
+
+	})
+	.catch( error => {
+		console.log(error);
+		alert(error+'catch');
 	});
+};
+
+const paintElement = (element,color) => {
+	document.getElementById(element).style.background=color;
 };
