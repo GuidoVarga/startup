@@ -73,3 +73,57 @@ const getJoke = () => {
 const paintElement = (element,color) => {
 	document.getElementById(element).style.background=color;
 };
+
+const getRepositories = () => {
+
+	let config={
+		url:'https://api.github.com/search/repositories?q=JavaScript',
+	}
+
+	request(config)
+	.then(data => {
+		let response=JSON.parse(data.response);
+		console.log(response);
+		showRepositories(response.items);
+
+	}, status => {
+		console.log(status);
+	})
+	.catch(error => {
+		console.log(error);
+	});
+
+};
+
+const showRepositories = (data) => {
+	
+	let url = 'https://github.com/';
+	let div = document.getElementById('found-repos');
+	div.innerHTML = "";
+	let title = document.createElement('h3');
+	title.appendChild(document.createTextNode('Results of the search:'));
+	div.appendChild(title);
+	let ul = document.createElement('ul');
+	let li;
+	let a;
+	let text;
+	let repo;	
+	for (let i = 0 ; i < data.length; i++) {
+		repo = data[i]['full_name'];
+		li = document.createElement('li');
+		a = document.createElement('a');
+		text = document.createTextNode(data[i]['full_name']);
+		a.title = repo;
+		a.href = url+repo;
+		a.target = '_blank';
+		a.appendChild(text);
+		li.appendChild(a);
+		ul.appendChild(li);
+	}
+	div.appendChild(ul);	
+};
+
+document.getElementById('button-repos').onclick = () => {
+	
+	getRepositories();
+}

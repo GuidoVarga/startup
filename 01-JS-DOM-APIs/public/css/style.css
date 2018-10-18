@@ -27,6 +27,7 @@ html {
 	margin: 0 auto;
 	clear: both;
 	position: relative;
+
 }
 
 .hidden-section {transition: opacity 5s;}
@@ -36,9 +37,17 @@ html {
 .content {
 	text-align: center;
 	margin-bottom: 20px;
-}	/*or section{ text-align: center; }
+}	/*or section{ text-align: center; }*/
 
+.clear {
+	clear: both;
+}
 
+.aside{
+	margin-bottom: 20px;
+	text-align: center;	
+}
 
-
-
+.aside ul{
+	text-align: left;
+}
