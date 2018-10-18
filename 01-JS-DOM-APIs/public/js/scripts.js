@@ -12,10 +12,9 @@ document.getElementById('button-jokes').onclick = function () {
 
 const request = (config) => {
 	return new Promise( (resolve,reject) => {
-
 		let xhr = new XMLHttpRequest;
-		xhr.open('GET', config.url, true);
-		
+		xhr.open(config.method, config.url);
+
 		if(config.headers){
 			Object.keys(config.headers).forEach( key => {
 				xhr.setRquestHeader(key, config.headers[key]);
@@ -23,7 +22,6 @@ const request = (config) => {
 		}
 
 		xhr.onload = () =>{
-
 			if(xhr.status>= 200 && xhr.status<300){
 				resolve(xhr);
 			}
@@ -39,30 +37,27 @@ const request = (config) => {
 };
 
 const getJoke = () => {
-
 	let config = {
-		url:'http://api.icndb.com/jokes/random'
+		url:'http://api.icndb.com/jokes/random',
+		method:'GET'
 	};
 
 	request(config)
 	.then( data => {
-
 		let response = JSON.parse(data.response);
 		let joke = response['value']['joke'];
 		let article = document.getElementById('joke-article');
 		article.innerHTML = "";
-		let h4 = document.createElement('h4');
-		let content = document.createTextNode(joke);
-		h4.appendChild(content);
-		article.appendChild(h4);
-
+		let h5 = document.createElement('h5');
+		let textNode = document.createTextNode(joke);
+		h5.appendChild(textNode);
+		article.appendChild(h5);
 	}, status => {
 		console.log(status);
 		alert(status);
 		if(status>=500 && status<600){
 			paintElement('joke-section','red');
 		}
-
 	})
 	.catch( error => {
 		console.log(error);
@@ -74,10 +69,10 @@ const paintElement = (element,color) => {
 	document.getElementById(element).style.background=color;
 };
 
-const getRepositories = () => {
-
+const getRepositories = (repo) => {
 	let config={
-		url:'https://api.github.com/search/repositories?q=JavaScript',
+		url:'https://api.github.com/search/repositories?q='+repo,
+		method:'GET'
 	}
 
 	request(config)
@@ -85,7 +80,7 @@ const getRepositories = () => {
 		let response=JSON.parse(data.response);
 		console.log(response);
 		showRepositories(response.items);
-
+		
 	}, status => {
 		console.log(status);
 	})
@@ -96,7 +91,6 @@ const getRepositories = () => {
 };
 
 const showRepositories = (data) => {
-	
 	let url = 'https://github.com/';
 	let div = document.getElementById('found-repos');
 	div.innerHTML = "";
@@ -108,6 +102,7 @@ const showRepositories = (data) => {
 	let a;
 	let text;
 	let repo;	
+
 	for (let i = 0 ; i < data.length; i++) {
 		repo = data[i]['full_name'];
 		li = document.createElement('li');
@@ -120,10 +115,11 @@ const showRepositories = (data) => {
 		li.appendChild(a);
 		ul.appendChild(li);
 	}
+
 	div.appendChild(ul);	
 };
 
 document.getElementById('button-repos').onclick = () => {
-	
-	getRepositories();
+	let repo = document.getElementById('input-repo').value;	
+	getRepositories(repo);
 }
