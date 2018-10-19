@@ -37,18 +37,17 @@ html {
 .content {
 	text-align: center;
 	margin-bottom: 20px;
-}	/*or section{ text-align: center; }*/
+}	/*or section { text-align: center; }*/
 
 .content article {
 	text-align: center;
-	padding-top: 20px;
 }
 
 .clear {
 	clear: both;
 }
 
-.aside{
+.aside {
 	margin-bottom: 20px;
 	text-align: center;	
 }
@@ -65,4 +64,8 @@ html {
 .content table {
 
 	width: 100%;
+}
+
+.table-div {
+	padding-top: 20px;
 }

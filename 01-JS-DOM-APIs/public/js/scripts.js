@@ -46,12 +46,12 @@ const getJoke = () => {
 	.then( data => {
 		let response = JSON.parse(data.response);
 		let joke = response['value']['joke'];
-		let article = document.getElementById('joke-article');
-		article.innerHTML = "";
-		let h5 = document.createElement('h5');
+		let div = document.getElementById('joke-div');
+		div.innerHTML = "";
+		let p = document.createElement('p');
 		let textNode = document.createTextNode(joke);
-		h5.appendChild(textNode);
-		article.appendChild(h5);
+		p.appendChild(textNode);
+		div.appendChild(p);
 	}, status => {
 		console.log(status);
 		alert(status);
@@ -145,8 +145,8 @@ const createMatrix = (data) => {
 
 const createTable = (matrix) => {
 
-	let article=document.getElementById('table-article');
-	article.innerHTML="";
+	let div=document.getElementById('table-div');
+	div.innerHTML="";
 	let table = document.createElement('table');
 	let tableBody = document.createElement('tbody');
 	let tr;
@@ -165,5 +165,5 @@ const createTable = (matrix) => {
 		tableBody.appendChild(tr);
 	}
 	table.appendChild(tableBody);
-	article.appendChild(table);
+	div.appendChild(table);
 }
