@@ -120,14 +120,16 @@ const showRepositories = (data) => {
 };
 
 document.getElementById('button-repos').onclick = () => {
-	let repo = document.getElementById('input-repo').value;	
-	getRepositories(repo);
+	let inputRepo = document.getElementById('input-repo');
+	verifyInputContent(inputRepo,getRepositories,inputRepo.value);
 }
 
 document.getElementById('button-matrix').onclick = () => {
-	let data = document.getElementById('input-matrix').value;
-	let matriz=createMatrix(data);
-	createTable(matriz);
+	let inputMatrix = document.getElementById('input-matrix');
+	let matrix=verifyInputContent(inputMatrix,createMatrix,inputMatrix.value);
+	if(matrix){
+		createTable(matrix);
+	}
 }
 
 const createMatrix = (data) => {
@@ -166,3 +168,13 @@ const createTable = (matrix) => {
 	table.appendChild(tableBody);
 	div.appendChild(table);
 }
+
+const verifyInputContent = (input,callback,parameter) => {
+
+	if(input.value==""){
+		alert('The ' + input.name + ' input can not be empty');
+	}
+	else{
+		return callback(parameter);
+	}
+};
