@@ -63,7 +63,7 @@ html {
 	font-size: 20px;
 }
 
- @media screen and (max-width: 640px){
+ @media screen and (max-width: 640px) {
   		
     .column.third{
     	width: 100%;
@@ -71,13 +71,8 @@ html {
     .column.two-thirds{
     	width: 100%;
     }
- }
+}
   
- @media screen and (min-width: 1024px) {
-    
- }
-
-
 .box {
 	opacity: 1;
 	position: relative;
@@ -92,7 +87,6 @@ html {
 	transition: all 0.8s ease-in-out;
 	width: 100%;
 }
-
 
 .box:hover .box-description {
 	background-color: rgba(144, 144, 144, 0.6);

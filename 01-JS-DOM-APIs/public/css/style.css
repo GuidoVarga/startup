@@ -30,9 +30,9 @@ html {
 
 }
 
-.hidden-section {transition: opacity 5s;}
+.hidden-section { transition: opacity 5s; }
 
-.hidden-section.fade { opacity: 0;}
+.hidden-section.fade { opacity: 0; }
 
 .content {
 	text-align: center;
@@ -56,13 +56,11 @@ html {
 	text-align: left;
 }
 
-
 .content table,thead, tbody, th, td {
 	border: 1px solid black;
 }
 
 .content table {
-
 	width: 100%;
 }
 

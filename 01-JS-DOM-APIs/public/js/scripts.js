@@ -130,7 +130,6 @@ document.getElementById('button-matrix').onclick = () => {
 	createTable(matriz);
 }
 
-
 const createMatrix = (data) => {
 
 	let array = data.split('/');
