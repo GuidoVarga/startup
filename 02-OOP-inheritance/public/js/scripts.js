@@ -1,8 +1,10 @@
-import Movie from '../js/movie.js';
+import Movie from './movie.js';
+import Actor from './actor.js';
 
 
-let backToTheFutureIII = new Movie('Back to the Future III',1990,118);
-let fightClub = new Movie('Fight Club',1999,151);
+const backToTheFutureIII = new Movie('Back to the Future III',1990,118);
+const fightClub = new Movie('Fight Club',1999,151);
+const edwardNorton = new Actor('Edward Norton',49);
 
 backToTheFutureIII.play();
 backToTheFutureIII.pause();
@@ -13,3 +15,5 @@ fightClub.play();
 fightClub.pause();
 fightClub.resume();
 fightClub.toString();
+
+edwardNorton.toString();

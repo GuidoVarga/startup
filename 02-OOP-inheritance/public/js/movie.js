@@ -1,13 +1,13 @@
 export default class Movie{
 
-	constructor(name,year,duration){
-		this.name=name;
-		this.year=year;
-		this.duration=duration;
+	constructor(name, year, duration){
+		this.name = name;
+		this.year = year;
+		this.duration = duration;
 	}
 
 	play(){
-		console.log('Playing '+this.name);
+		console.log('Playing ' + this.name);
 	}
 
 	pause(){
