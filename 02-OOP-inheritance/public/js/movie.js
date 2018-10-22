@@ -1,21 +1,24 @@
-export default class Movie{
+import EventEmitter from './eventEmitter.js';
+
+export default class Movie extends EventEmitter{
 
 	constructor(name, year, duration){
+		super();
 		this.name = name;
 		this.year = year;
 		this.duration = duration;
 	}
 
 	play(){
-		console.log('Playing ' + this.name);
+		this.emit('play', this);
 	}
 
 	pause(){
-		console.log(this.name + ' in pause')
+		this.emit('pause', this);
 	}
 
 	resume(){
-		console.log('Resuming ' + this.name);
+		this.emit('resume', this);
 	}
 
 	toString(){
