@@ -12,7 +12,7 @@ document.getElementById('button-jokes').onclick = function () {
 
 const request = (config) => {
 	return new Promise( (resolve,reject) => {
-		let xhr = new XMLHttpRequest;
+		const xhr = new XMLHttpRequest;
 		xhr.open(config.method, config.url);
 
 		if(config.headers){
@@ -37,31 +37,29 @@ const request = (config) => {
 };
 
 const getJoke = () => {
-	let config = {
+	const config = {
 		url:'http://api.icndb.com/jokes/random',
 		method:'GET'
 	};
 
 	request(config)
 	.then( data => {
-		let response = JSON.parse(data.response);
-		let joke = response['value']['joke'];
-		let div = document.getElementById('joke-div');
+		const response = JSON.parse(data.response);
+		const joke = response['value']['joke'];
+		const div = document.getElementById('joke-div');
 		div.innerHTML = "";
-		let p = document.createElement('p');
-		let textNode = document.createTextNode(joke);
+		const p = document.createElement('p');
+		const textNode = document.createTextNode(joke);
 		p.appendChild(textNode);
 		div.appendChild(p);
 	}, status => {
 		console.log(status);
-		alert(status);
 		if(status>=500 && status<600){
 			paintElement('joke-section','red');
 		}
 	})
 	.catch( error => {
 		console.log(error);
-		alert(error+'catch');
 	});
 };
 
@@ -70,15 +68,14 @@ const paintElement = (element,color) => {
 };
 
 const getRepositories = (repo) => {
-	let config={
+	const config={
 		url:'https://api.github.com/search/repositories?q='+repo,
 		method:'GET'
 	}
 
 	request(config)
 	.then(data => {
-		let response=JSON.parse(data.response);
-		console.log(response);
+		const response=JSON.parse(data.response);
 		showRepositories(response.items);
 
 	}, status => {
@@ -91,13 +88,13 @@ const getRepositories = (repo) => {
 };
 
 const showRepositories = (data) => {
-	let url = 'https://github.com/';
-	let div = document.getElementById('found-repos');
+	const url = 'https://github.com/';
+	const div = document.getElementById('found-repos');
 	div.innerHTML = "";
-	let title = document.createElement('h3');
+	const title = document.createElement('h3');
 	title.appendChild(document.createTextNode('Results of the search:'));
 	div.appendChild(title);
-	let ul = document.createElement('ul');
+	const ul = document.createElement('ul');
 	let li;
 	let a;
 	let text;
@@ -120,13 +117,13 @@ const showRepositories = (data) => {
 };
 
 document.getElementById('button-repos').onclick = () => {
-	let inputRepo = document.getElementById('input-repo');
+	const inputRepo = document.getElementById('input-repo');
 	verifyInputContent(inputRepo,getRepositories,inputRepo.value);
 }
 
 document.getElementById('button-matrix').onclick = () => {
-	let inputMatrix = document.getElementById('input-matrix');
-	let matrix=verifyInputContent(inputMatrix,createMatrix,inputMatrix.value);
+	const inputMatrix = document.getElementById('input-matrix');
+	const matrix = verifyInputContent(inputMatrix,createMatrix,inputMatrix.value);
 	if(matrix){
 		createTable(matrix);
 	}
@@ -138,7 +135,7 @@ const createMatrix = (data) => {
 	let matriz = [];
 
 	for(let i = 0; i<array.length; i++){
-		matriz[i]=array[i].split('-');
+		matriz.push(array[i].split('-'));
 	}
 
 	return matriz;
@@ -146,10 +143,10 @@ const createMatrix = (data) => {
 
 const createTable = (matrix) => {
 
-	let div=document.getElementById('table-div');
+	const div=document.getElementById('table-div');
 	div.innerHTML="";
-	let table = document.createElement('table');
-	let tableBody = document.createElement('tbody');
+	const table = document.createElement('table');
+	const tableBody = document.createElement('tbody');
 	let tr;
 	let td;
 	let text;
