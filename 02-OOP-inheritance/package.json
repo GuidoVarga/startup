@@ -1,0 +1,23 @@
+{
+  "name": "02-oop-inheritance",
+  "version": "1.0.0",
+  "description": "OOP and inheritance",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuidoVarga/startup.git"
+  },
+  "author": "Guido",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuidoVarga/startup/issues"
+  },
+  "homepage": "https://github.com/GuidoVarga/startup#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2"
+  }
+}

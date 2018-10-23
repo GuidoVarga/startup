@@ -2,7 +2,7 @@ import Movie from './movie.js';
 import Actor from './actor.js';
 import Logger from './logger.js';
 
-window.onload = function (){
+window.onload = () => {
 
 	const logger = new Logger();
 	const backToTheFutureIII = new Movie('Back to the Future Part III',1990,118);
