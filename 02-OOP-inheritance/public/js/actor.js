@@ -5,7 +5,7 @@ export default class Actor{
 		this.age = age;
 	}
 
-	toString(){
+	toString() {
 		console.log(this.name + ' is a ' + this.age + ' years old actor');
 	}
 }

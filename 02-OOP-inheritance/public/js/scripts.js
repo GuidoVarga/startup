@@ -1,17 +1,29 @@
 import Movie from './movie.js';
 import Actor from './actor.js';
 
-const backToTheFutureIII = new Movie('Back to the Future III',1990,118);
-const fightClub = new Movie('Fight Club',1999,151);
-const edwardNorton = new Actor('Edward Norton',49);
+window.onload = function (){
 
-backToTheFutureIII.on('play', (movie) => { console.log('Playing '+movie.name) });
-backToTheFutureIII.on('pause', (movie) => { console.log('Pausing '+movie.name) });
-backToTheFutureIII.on('resume', (movie) => { console.log('Resuming '+movie.name) });
+	const backToTheFutureIII = new Movie('Back to the Future Part III',1990,118);
+	const fightClub = new Movie('Fight Club',1999,151);
+	const michael = new Actor('Michael J. Fox',57);
+	const cast = [
+		new Actor('Christopher Lloyd',80),
+		new Actor('Mary Steenburgen',65),
+		new Actor('Thomas F. Wilson',59)
+	];
 
-backToTheFutureIII.play();
-backToTheFutureIII.pause();
-backToTheFutureIII.resume();
-backToTheFutureIII.toString();
+	backToTheFutureIII.on('play', (movie) => { console.log('Playing '+movie.name) });
+	backToTheFutureIII.on('pause', (movie) => { console.log('Pausing '+movie.name) });
+	backToTheFutureIII.on('resume', (movie) => { console.log('Resuming '+movie.name) });
 
-edwardNorton.toString();
+
+	backToTheFutureIII.play();
+	backToTheFutureIII.pause();
+	backToTheFutureIII.resume();
+
+	backToTheFutureIII.addCast(cast);
+	backToTheFutureIII.addCast(michael);
+
+	console.log(backToTheFutureIII.cast);
+
+}
