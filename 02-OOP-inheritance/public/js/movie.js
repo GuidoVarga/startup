@@ -1,4 +1,5 @@
 import EventEmitter from './eventEmitter.js';
+import social from './social.js';
 
 export default class Movie extends EventEmitter{
 
@@ -8,6 +9,7 @@ export default class Movie extends EventEmitter{
 		this.year = year;
 		this.duration = duration;
 		this.cast = [];
+		Object.assign(this,social);
 	}
 
 	play(){

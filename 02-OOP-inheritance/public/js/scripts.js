@@ -4,7 +4,6 @@ import Logger from './logger.js';
 
 window.onload = function (){
 
-
 	const logger = new Logger();
 	const backToTheFutureIII = new Movie('Back to the Future Part III',1990,118);
 	const fightClub = new Movie('Fight Club',1999,151);
@@ -22,7 +21,6 @@ window.onload = function (){
 	fightClub.on('pause', (movie) => { logger.log('The pause event of ' + movie.name + ' has been emitted') });
 	fightClub.on('resume', (movie) => { logger.log('The resume event of ' + movie.name + ' has been emitted') });
 	
-
 	backToTheFutureIII.play();
 	backToTheFutureIII.pause();
 	backToTheFutureIII.resume();
@@ -35,4 +33,7 @@ window.onload = function (){
 
 	logger.log(backToTheFutureIII.cast);
 
+	backToTheFutureIII.share('Sebastian');
+
+	fightClub.like('Guido');
 }
