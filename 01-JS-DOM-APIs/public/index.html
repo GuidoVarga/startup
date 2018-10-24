@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="A bit of javascript">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		<link rel="stylesheet" href="css/grid.css" type="text/css">
+		<link rel="stylesheet" href="css/normalize.css" type="text/css">
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row clearfix">
+				<div class="column two-thirds">
+					<section class="content">
+						<header>
+							<h2>Section 1</h2>
+						</header>
+						<article>
+							<header class="header">
+								<h4>Article tittle</h4>
+							</header>
+							<p>Some random text 1</p>
+						</article>
+					</section>
+					<section class="content hidden-section fade" id="hidden-section">
+							<header id="header" class="header">
+								<h2>The hidden section</h2>
+							</header>
+							<p>Hello world!</p>
+					</section>
+					<section class="content" id="joke-section">
+						<header>
+							<h2>The joke section!</h2>
+						</header>
+						<button id="button-jokes">Get a joke!</button>
+						<div id="joke-div"></div>
+					</section>
+				</div>
+				<div class="column third">
+					<aside class="aside">	
+						<h2>Search repositories</h2>	
+						<input type="text" id="input-repo" name="repository" placeholder="What are you looking for?"/>
+						<br>
+						<br>
+						<button id="button-repos">Search</button>
+						<br>
+						<div id="found-repos"></div>
+					</aside>
+				</div>
+			</div>
+			<div class="row clearfix">
+				<div class="column full">
+					<section id="table-section" class="content">
+						<header class="header">
+							<h1> Table creation </h1>
+						</header>
+						<textarea name="matrix" id="input-matrix" 
+						placeholder="Write a matrix e.g: a-b-c-d/e-f-g-h/i-j-k-m. The - separate the columns and the / separate the rows" rows="5" cols="40"></textarea>
+						<br>
+						<br>
+						<button id="button-matrix">Create table</button>
+						<div id="table-div" class="table-div"></div>
+					</section>
+				</div>
+			</div>
+		</div>
+		<script src='js/scripts.js'></script>
+	</body>
+</html>
