@@ -33,3 +33,7 @@ const localStorageRemove = (key) => {
 
 	localStorage.removeItem(key);
 }
+
+document.getElementById('ls-clear-button').onclick = () => {
+	document.getElementById('ls-textarea').value="";
+}

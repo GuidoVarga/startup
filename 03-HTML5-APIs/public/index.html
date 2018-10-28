@@ -18,11 +18,12 @@
 						<header class="header">
 							<h2> Save text with local storage </h2>
 						</header>
-						<label for="ls-textarea">Write something</label>
-						<div>
-							<textarea name="ls-textarea" id="ls-textarea" rows="10" cols="50"></textarea>
+						<label for="ls-textarea">Write something or drop a text file</label>
+						<div class="div-textarea" id="div-ls-textarea">
+							<textarea class="textarea" name="ls-textarea" id="ls-textarea" rows="10"></textarea>
 						</div>
 						<button id="ls-save-button">Save</button>
+						<button id="ls-clear-button">Clear</button>
 					</section>
 					<section class="content">
 						<header class="header">
@@ -45,11 +46,12 @@
 							<header class="header">
 								<h2> Save text with db indexed </h2>
 							</header>
-							<label for="db-textarea">Write something</label>
-							<div>
-								<textarea name="db-textarea" id="db-textarea" rows="10" cols="50"></textarea>
+							<label for="db-textarea">Write something or drop a text file</label>
+							<div class="div-textarea" id="div-db-textarea">
+								<textarea class="textarea" name="db-textarea" id="db-textarea" rows="10"></textarea>
 							</div>
 							<button id="db-save-button">Save</button>
+							<button id="db-clear-button">Clear</button>
 						</section>
 						<section class="content">
 							<header class="header">
@@ -72,6 +74,7 @@
 		</div>
 		<script src="js/indexedDB.js"></script>
 		<script src="js/localStorage.js"></script>
+		<script src="js/dragAndDrop.js"></script>
 	</body>
 
 </html>

@@ -15,7 +15,6 @@ const initializeDB = () => {
 	
 	DBOpenRequest.onerror = function(event) {
 		console.log('error loading');
-		console.log(event);
 	};
  
  	DBOpenRequest.onsuccess = function(event) {
@@ -60,7 +59,6 @@ const saveItem = (item) => {
 
 		console.log('Database initialized');
 		const db = DBOpenRequest.result;
-		console.log(db);
 		const transaction = openTransaction(db,['texts'],'readwrite');
 		const objectStore = transaction.objectStore('texts');
 		const objectStoreRequest = objectStore.put(item);
@@ -84,7 +82,6 @@ const getItemDB = (stores,index,callback) => {
 
 			console.log('Request successful');
 			const item = objectStoreRequest.result;
-			console.log(item);
 			closeDB(db);
 			callback(item);
 		};
@@ -134,4 +131,8 @@ document.getElementById('db-delete-button').onclick = () => {
 		const div=document.getElementById('db-div-get-text');
 		div.innerHTML = "";
 	});
+}
+
+document.getElementById('db-clear-button').onclick = () => {
+	document.getElementById('db-textarea').value ="";
 }

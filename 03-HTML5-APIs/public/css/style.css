@@ -27,7 +27,6 @@ html {
 	margin: 0 auto;
 	clear: both;
 	position: relative;
-	background-color: orange;
 	padding-top: 20px;
 }
 
@@ -67,4 +66,19 @@ html {
 
 .table-div {
 	padding-top: 20px;
+}
+
+.hover {
+	border: 3px;
+	border-color: red;
+	background-color: #DFDFDF;
+
+}
+
+.div-textarea {
+	padding-top: 5px;
+}
+
+.textarea {
+	width: 98%;
 }
