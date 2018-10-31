@@ -1,0 +1,31 @@
+{
+  "name": "02-oop-inheritance",
+  "version": "1.0.0",
+  "description": "OOP and inheritance",
+  "main": "scripts.js",
+  "scripts": {
+    "webpack": "webpack",
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuidoVarga/startup.git"
+  },
+  "author": "Guido",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuidoVarga/startup/issues"
+  },
+  "homepage": "https://github.com/GuidoVarga/startup#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
+    "webpack": "^4.22.0",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0"
+  }
+}
