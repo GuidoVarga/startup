@@ -38,37 +38,39 @@ class MovieForm extends Component {
 
    render() {
       return (
-         <form className="MovieForm" onSubmit={this.handleSubmit}>
-            <label>
-               Name:
-               <input className="input-name"
-                      name="movieName"
-                      value={this.state.movieName}
-                      type="text"
-                      onChange={this.handleInputChange}/>
-            </label>
-            <br />
-            <label>
-               Year:
-               <input className="input-year"
-                      name="movieYear"
-                      value={this.state.movieYear}
-                      type="date"
-                      onChange={this.handleInputChange}/>
-            </label>
-            <br />
-            <label>
-               Duration:
-               <input
-                  className="input-duration"
-                  name="movieDuration"
-                  value={this.state.movieDuration}
-                  type="number"
-                  onChange={this.handleInputChange}/>
-            </label>
-            <br />
-            <input type="submit" value="Submit"/>
-         </form>
+        <form className="MovieForm" onSubmit={this.handleSubmit}>
+           <label>
+              Name:
+              <input
+                className="input-name"
+                name="movieName"
+                value={this.state.movieName}
+                type="text"
+                onChange={this.handleInputChange}/>
+           </label>
+           <br />
+           <label>
+              Year:
+              <input
+                className="input-year"
+                name="movieYear"
+                value={this.state.movieYear}
+                type="text"
+                onChange={this.handleInputChange}/>
+           </label>
+           <br />
+           <label>
+              Duration:
+              <input
+                className="input-duration"
+                name="movieDuration"
+                value={this.state.movieDuration}
+                type="number"
+                onChange={this.handleInputChange}/>
+           </label>
+           <br />
+           <input type="submit" value="Submit"/>
+        </form>
       );
    }
 

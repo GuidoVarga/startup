@@ -3,12 +3,14 @@
  */
 import React, {Fragment, Component} from 'react';
 import LocalStorageManager from '../localStorageManager';
-import MovieForm from "./MovieForm";
+import MovieForm from './MovieForm';
+import MovieList from './MovieList';
 
 class MoviesContainer extends Component {
 
    constructor(props) {
       super(props);
+
       this.state = {
          movies: []
       };
@@ -29,21 +31,34 @@ class MoviesContainer extends Component {
       this.setState({
          movies: [...movies, movie]
       });
+
+
       console.log(this.state.movies);
    }
 
    render() {
 
       return (
-         <div>
-            <section>
-               <header>
-                  <h2>Add your favourite movies</h2>
-               </header>
-               <MovieForm action={this.addMovie}/>
-            </section>
-         </div>
+        <React.Fragment>
+           <div className="column half">
+              <section className="content">
+                 <header>
+                    <h2>Add your favourite movies</h2>
+                 </header>
+                 <MovieForm action={this.addMovie}/>
+              </section>
+           </div>
+           <div className="column half">
+              <section>
+                 <header>
+                    <h2>Your favourite movies list</h2>
+                 </header>
+                 <MovieList movies={this.state.movies}/>
+              </section>
+           </div>
+        </React.Fragment>
       );
    }
+
 }
 export default MoviesContainer;
