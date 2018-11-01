@@ -1,0 +1,79 @@
+/* Small screens (default) */
+html {
+   font-size: 100%;
+   min-width: 40rem;
+}
+
+/* Medium screens (640px) */
+@media (min-width: 40rem) {
+   html {
+      font-size: 102%;
+   }
+}
+
+/* Large screens (1024px) */
+@media (min-width: 64rem) {
+   html {
+      font-size: 110%;
+   }
+}
+
+*, *:before, *:after {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.container {
+   box-sizing: content-box;
+   max-width: 70rem;
+   width: 90%;
+   margin: 0 auto;
+   clear: both;
+   position: relative;
+
+}
+
+.hidden-section {
+   transition: opacity 5s;
+}
+
+.hidden-section.fade {
+   opacity: 0;
+}
+
+.content {
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+/*or section { text-align: center; }*/
+
+.content article {
+   text-align: center;
+}
+
+.clear {
+   clear: both;
+}
+
+.aside {
+   margin-bottom: 20px;
+   text-align: center;
+}
+
+.aside ul {
+   text-align: left;
+}
+
+.content table, thead, tbody, th, td {
+   border: 1px solid black;
+}
+
+.content table {
+   width: 100%;
+}
+
+.table-div {
+   padding-top: 20px;
+}
