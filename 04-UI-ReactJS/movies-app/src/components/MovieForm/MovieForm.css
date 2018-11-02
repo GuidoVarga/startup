@@ -1,20 +1,21 @@
 .MovieForm {
    font-size: 20px;
    padding-top: 20px;
-
+   text-align: center;
 }
 
 .input-duration {
-   width: 8rem;
+   width: 9rem;
    margin-left: 0.5rem;
 }
 
 .input-name {
-   width: 8rem;
-   margin-left: 1.75rem;
+   width: 9rem;
+   margin-left: 2rem;
 }
 
 .input-year {
-   width: 8rem;
-   margin-left: 2.6rem;
+   width: 9rem;
+   margin-left: 3rem;
 }
+

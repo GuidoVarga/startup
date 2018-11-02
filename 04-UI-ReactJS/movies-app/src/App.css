@@ -1,0 +1,99 @@
+.App {
+   text-align: center;
+}
+
+.App-logo {
+   animation: App-logo-spin infinite 20s linear;
+   height: 40vmin;
+}
+
+.App-header {
+   background-color: #282c34;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   font-size: calc(10px + 2vmin);
+   color: white;
+}
+
+.App-link {
+   color: #61dafb;
+}
+
+.Container {
+   margin: 0 auto;
+   max-width: 70rem;
+   width: 90%;
+}
+
+.Content {
+   text-align: center;
+}
+
+@keyframes App-logo-spin {
+   from {
+      transform: rotate(0deg);
+   }
+   to {
+      transform: rotate(360deg);
+   }
+}
+
+.Submit-button {
+   background-color: #0A5DF7;
+   border-color: #326DD9;
+   color: white;
+   padding: 0.2rem 1rem;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 14px;
+   margin-top: 0.5rem;
+}
+
+.Edit-button {
+   background-color: #4CAF50;
+   border-color: #3E8C41;
+   color: white;
+   padding: 0.1rem 0.2rem;
+   text-align: center;
+   text-decoration: none;
+   display: block;
+   font-size: 14px;
+   width: 5rem;
+}
+
+.Modal {
+   border: solid 2px;
+   border-color: orange;
+   background-color: #FDE8C7;
+   padding-top: 0.5rem;
+   text-align: center;
+   width: 30rem;
+   height: 18rem;
+   transform: translate(150%, 50%);
+}
+
+.Modal:focus {
+   outline: 0;
+}
+
+.Modal .Submit-button {
+   margin-left: 0rem;
+}
+
+.Close-button {
+   position: absolute;
+   background-color: #f71614;
+   border-color: #D82322;
+   color: white;
+   padding: 0.2rem 1rem;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 14px;
+   margin-top: 2.8rem;
+   margin-left: 10rem;
+}

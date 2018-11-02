@@ -1,0 +1,23 @@
+.MovieList {
+   width: 100%;
+   font-size: 1.3rem;
+}
+
+.MovieList table, td, th {
+
+}
+
+.MovieList td {
+   text-align: center;
+   padding-top: 1.5rem;
+}
+
+.MovieList .MovieTD {
+   text-align: left;
+   padding-left: 10rem;
+   width: 50%;
+}
+
+.MovieList .MovieTD {
+   text-align: left;
+}
