@@ -1,17 +1,22 @@
 /**
  * Created by Guido on 2/11/2018.
  */
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 
 class MovieComponent extends Component {
 
   constructor(props) {
     super(props);
-    this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.handleEditButtonClick = this.handleEditButtonClick.bind(this);
+    this.handleDeleteButtonClick = this.handleDeleteButtonClick.bind(this);
   }
 
-  handleButtonClick() {
-    this.props.action(this.props.k, this.props.movie);
+  handleEditButtonClick() {
+    this.props.onEditClicked(this.props.k, this.props.movie);
+  }
+
+  handleDeleteButtonClick() {
+    this.props.onDeleteClicked(this.props.k);
   }
 
   render() {
@@ -21,7 +26,10 @@ class MovieComponent extends Component {
        <td>{this.props.movie.year}</td>
        <td>{this.props.movie.duration} minutes</td>
        <td className="ButtonTD">
-         <button className="Edit-button" onClick={this.handleButtonClick}> Edit</button>
+         <button className="Edit-button" onClick={this.handleEditButtonClick}> Edit</button>
+       </td>
+       <td className="ButtonTD">
+         <button className="Delete-button" onClick={this.handleDeleteButtonClick}> Delete</button>
        </td>
      </React.Fragment>
     );

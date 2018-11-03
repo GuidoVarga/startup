@@ -3,38 +3,38 @@
  */
 export default class Movie {
 
-   constructor(name, year, duration) {
-      this.name = name;
-      this.year = year;
-      this.duration = duration;
-      //this.cast = [];
+  constructor(name, year, duration) {
+    this.name = name;
+    this.year = year;
+    this.duration = duration;
+    //this.cast = [];
+  }
+
+  play() {
+
+  }
+
+  pause() {
+
+  }
+
+  resume() {
+
+  }
+
+  /*
+   addCast(cast){
+
+   if(Array.isArray(cast)){
+   this.cast.push(...cast);
+   }else{
+   this.cast.push(cast);
    }
 
-   play() {
-
    }
 
-   pause() {
-
+   toString(){
+   console.log(this.name + ' is a ' + this.year + ' film with a ' + this.duration + ' minutes duration.');
    }
-
-   resume() {
-
-   }
-
-   /*
-    addCast(cast){
-
-       if(Array.isArray(cast)){
-         this.cast.push(...cast);
-        }else{
-         this.cast.push(cast);
-         }
-
-    }
-
-    toString(){
-      console.log(this.name + ' is a ' + this.year + ' film with a ' + this.duration + ' minutes duration.');
-    }
-    */
+   */
 }

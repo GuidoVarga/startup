@@ -1,7 +1,7 @@
 /**
  * Created by Guido on 31/10/2018.
  */
-import React, {Fragment, Component} from 'react';
+import React, {Component} from 'react';
 import LocalStorageManager from '../../localStorageManager';
 import MovieForm from '../MovieForm/MovieForm';
 import MovieList from '../MovieList/MovieList';
@@ -22,6 +22,7 @@ class MoviesContainer extends Component {
     this.addMovie = this.addMovie.bind(this);
     this.showMovieEditForm = this.showMovieEditForm.bind(this);
     this.editMovie = this.editMovie.bind(this);
+    this.deleteMovie = this.deleteMovie.bind(this);
     this.loadMovies = this.loadMovies.bind(this);
     this.hideMovieEditForm = this.hideMovieEditForm.bind(this);
     this.openModal = this.openModal.bind(this);
@@ -29,6 +30,7 @@ class MoviesContainer extends Component {
     this.closeModal = this.closeModal.bind(this);
     this.suscribeBeforeUnload();
     Modal.setAppElement('#root');
+
   }
 
   componentDidMount() {
@@ -42,7 +44,11 @@ class MoviesContainer extends Component {
   suscribeBeforeUnload() {
     window.addEventListener("beforeunload", (ev) => {
       ev.preventDefault();
-      LocalStorageManager.saveAll(this.state.movies)
+      LocalStorageManager.removeAll();
+      LocalStorageManager.saveAll(this.state.movies);
+      /*If I don't do it in this way, I have a synchronization problem between keys
+       in the table and keys storage, because there is no id in movie class
+       */
     });
   }
 
@@ -84,6 +90,15 @@ class MoviesContainer extends Component {
     this.hideMovieEditForm();
   }
 
+  deleteMovie(key) {
+    const movies = this.state.movies;
+    movies.splice(key, 1);
+    this.setState({
+      movies: movies
+    });
+    //LocalStorageManager.remove(key, movie);
+  }
+
   showMovieEditForm(key, movie) {
     this.openModal();
     this.setState({
@@ -115,7 +130,8 @@ class MoviesContainer extends Component {
          <header>
            <h2>Your favourite movies list</h2>
          </header>
-         <MovieList className="MovieList" movies={this.state.movies} action={this.showMovieEditForm}/>
+         <MovieList className="MovieList" movies={this.state.movies} onEditClicked={this.showMovieEditForm}
+                    onDeleteClicked={this.deleteMovie}/>
        </section>
        <Modal className="Modal" isOpen={this.state.modalIsOpen}>
          <header>

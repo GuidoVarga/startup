@@ -49,6 +49,8 @@ class MovieForm extends Component {
       else {
         this.props.action(movie);
       }
+    } else {
+      alert('Complete the movie title');
     }
   };
 
@@ -72,7 +74,7 @@ class MovieForm extends Component {
           className="input-year"
           name="movieYear"
           value={this.state.movieYear}
-          type="text"
+          type="date"
           onChange={this.handleInputChange}/>
        </label>
        <br />
