@@ -6,6 +6,8 @@ import LocalStorageManager from '../../localStorageManager';
 import MovieForm from '../MovieForm/MovieForm';
 import MovieList from '../MovieList/MovieList';
 import Modal from 'react-modal';
+import {connect} from 'react-redux'
+import {deleteMovie, editMovie} from '../../actions/actions';
 
 class MoviesContainer extends Component {
 
@@ -19,22 +21,20 @@ class MoviesContainer extends Component {
       modalIsOpen: false
     };
 
-    this.addMovie = this.addMovie.bind(this);
     this.showMovieEditForm = this.showMovieEditForm.bind(this);
-    this.editMovie = this.editMovie.bind(this);
-    this.deleteMovie = this.deleteMovie.bind(this);
     this.loadMovies = this.loadMovies.bind(this);
     this.hideMovieEditForm = this.hideMovieEditForm.bind(this);
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.suscribeBeforeUnload();
+    // this.suscribeBeforeUnload();
     Modal.setAppElement('#root');
+    //LocalStorageManager.removeAll();
 
   }
 
   componentDidMount() {
-    this.loadMovies();
+    //this.loadMovies();
   }
 
   componentWillUnmount() {
@@ -71,34 +71,6 @@ class MoviesContainer extends Component {
     });
   }
 
-  addMovie(movie) {
-    const movies = this.state.movies;
-    this.setState({
-      movies: [...movies, movie]
-    });
-    //LocalStorageManager.save(movie);
-  }
-
-  editMovie(key, movie) {
-
-    const movies = this.state.movies;
-    movies[key] = movie;
-    this.setState({
-      movies: movies
-    });
-    //LocalStorageManager.update(key, movie);
-    this.hideMovieEditForm();
-  }
-
-  deleteMovie(key) {
-    const movies = this.state.movies;
-    movies.splice(key, 1);
-    this.setState({
-      movies: movies
-    });
-    //LocalStorageManager.remove(key, movie);
-  }
-
   showMovieEditForm(key, movie) {
     this.openModal();
     this.setState({
@@ -117,21 +89,17 @@ class MoviesContainer extends Component {
 
   render() {
     const movieEditForm = this.state.modalIsOpen ?
-     <MovieForm movie={this.state.movieInEdition} k={this.state.keyInEdition} action={this.editMovie}/> : null;
+     <MovieForm movie={this.state.movieInEdition} k={this.state.keyInEdition} closeModal={this.closeModal}
+                action={this.props.onEdit}/> : null;
     return (
      <div>
-       <section className="Content">
-         <header>
-           <h2>Add your favourite movies</h2>
-         </header>
-         <MovieForm movie={null} className="MovieForm" action={this.addMovie}/>
-       </section>
+
        <section className="Content">
          <header>
            <h2>Your favourite movies list</h2>
          </header>
-         <MovieList className="MovieList" movies={this.state.movies} onEditClicked={this.showMovieEditForm}
-                    onDeleteClicked={this.deleteMovie}/>
+         <MovieList className="MovieList" movies={this.props.movies} onEditClicked={this.showMovieEditForm}
+                    onDeleteClicked={this.props.onDelete}/>
        </section>
        <Modal className="Modal" isOpen={this.state.modalIsOpen}>
          <header>
@@ -144,4 +112,25 @@ class MoviesContainer extends Component {
     );
   }
 }
-export default MoviesContainer;
+
+const mapStateToProps = (state) => {
+  return {
+    movies: state.movies
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onDelete: (index) => {
+      dispatch(deleteMovie(index))
+    },
+    onEdit: (index, movie) => {
+      dispatch(editMovie(index, movie))
+    }
+  }
+};
+
+export default connect(
+ mapStateToProps,
+ mapDispatchToProps
+)(MoviesContainer)

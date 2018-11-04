@@ -45,6 +45,7 @@ class MovieForm extends Component {
     if (movie.name !== '') {
       if (key >= 0) {
         this.props.action(key, movie);
+        this.props.closeModal();
       }
       else {
         this.props.action(movie);
@@ -74,7 +75,9 @@ class MovieForm extends Component {
           className="input-year"
           name="movieYear"
           value={this.state.movieYear}
-          type="date"
+          type="number"
+          min="1888"
+          max="2018"
           onChange={this.handleInputChange}/>
        </label>
        <br />
