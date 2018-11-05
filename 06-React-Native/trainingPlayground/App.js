@@ -20,22 +20,41 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
-      </View>
+    <View style={styles.view1}>
+
+
+      <View style={styles.view2}>
+     </View>
+    <View style={styles.view3}>
+    </View>
+     </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    width: 300,
-    height: 300,
+  view1: {
+    flex:1,
     borderColor: 'black',
     borderRadius: 10,
     borderWidth: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'steelblue',
-
+    backgroundColor: 'steelblue'
+  },
+  view2: {
+    width: 100,
+    height: 100,
+    borderColor: 'black',
+    borderRadius: 10,
+    borderWidth: 1,
+    backgroundColor: 'green',
+  },
+  view3: {
+    width: 50,
+    height: 50,
+    borderColor: 'black',
+    borderRadius: 10,
+    borderWidth: 1,
+    backgroundColor: 'blue',
   }
 });
