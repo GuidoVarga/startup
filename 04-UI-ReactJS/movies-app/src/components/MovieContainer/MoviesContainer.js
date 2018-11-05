@@ -25,39 +25,12 @@ class MoviesContainer extends Component {
     this.loadMovies = this.loadMovies.bind(this);
     this.hideMovieEditForm = this.hideMovieEditForm.bind(this);
     this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    // this.suscribeBeforeUnload();
     Modal.setAppElement('#root');
-    //LocalStorageManager.removeAll();
-
-  }
-
-  componentDidMount() {
-    //this.loadMovies();
-  }
-
-  componentWillUnmount() {
-    //LocalStorageManager.saveAll(this.state.movies); Doesn't work
-  }
-
-  suscribeBeforeUnload() {
-    window.addEventListener("beforeunload", (ev) => {
-      ev.preventDefault();
-      LocalStorageManager.removeAll();
-      LocalStorageManager.saveAll(this.state.movies);
-      /*If I don't do it in this way, I have a synchronization problem between keys
-       in the table and keys storage, because there is no id in movie class
-       */
-    });
   }
 
   openModal() {
     this.setState({modalIsOpen: true});
-  }
-
-  afterOpenModal() {
-
   }
 
   closeModal() {
@@ -92,8 +65,7 @@ class MoviesContainer extends Component {
      <MovieForm movie={this.state.movieInEdition} k={this.state.keyInEdition} closeModal={this.closeModal}
                 action={this.props.onEdit}/> : null;
     return (
-     <div>
-
+     <React.Fragment>
        <section className="Content">
          <header>
            <h2>Your favourite movies list</h2>
@@ -108,7 +80,7 @@ class MoviesContainer extends Component {
          {movieEditForm}
          <button className="Close-button" onClick={this.closeModal}>Close</button>
        </Modal>
-     </div>
+     </React.Fragment>
     );
   }
 }

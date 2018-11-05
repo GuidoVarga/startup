@@ -6,16 +6,16 @@ import * as serviceWorker from './serviceWorker';
 import {createStore} from 'redux';
 import moviesActions from './reducers/moviesReducer';
 import {addMovie} from './actions/actions';
-import { Provider } from 'react-redux';
+import {Provider} from 'react-redux';
 import Movie from './model/movie';
 
 const store = createStore(moviesActions);
 
 const unsubscribe = store.subscribe(() => console.log(store.getState()))
 
-store.dispatch(addMovie( new Movie('Memento',2000,113)));
-store.dispatch(addMovie( new Movie('Fight Club',1999,157)));
-store.dispatch(addMovie(new Movie('Back to the Future Part III',1990,118)));
+store.dispatch(addMovie(new Movie('Memento', 2000, 113)));
+store.dispatch(addMovie(new Movie('Fight Club', 1999, 157)));
+store.dispatch(addMovie(new Movie('Back to the Future Part III', 1990, 118)));
 unsubscribe();
 
 
