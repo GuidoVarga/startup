@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, ScrollView} from 'react-native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -20,39 +20,42 @@ Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-     <View style={styles.view1}>
+     <ScrollView horizontal={true}>
+       <View style={styles.view1}>
+       </View>
        <View style={styles.view2}>
        </View>
        <View style={styles.view3}>
        </View>
-     </View>
+     </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   view1: {
-    flex: 1,
+    width: 300,
+    height: 400,
     borderColor: 'black',
     borderRadius: 10,
     borderWidth: 1,
     alignItems: 'center',
-    backgroundColor: 'steelblue'
+    backgroundColor: 'red'
   },
   view2: {
-    width: 100,
-    height: 100,
+    width: 200,
+    height: 300,
     borderColor: 'black',
     borderRadius: 10,
     borderWidth: 1,
-    backgroundColor: 'green',
+    backgroundColor: 'orange'
   },
   view3: {
-    width: 50,
-    height: 50,
+    width: 150,
+    height: 250,
     borderColor: 'black',
     borderRadius: 10,
     borderWidth: 1,
-    backgroundColor: 'blue',
+    backgroundColor: 'yellow'
   }
 });
