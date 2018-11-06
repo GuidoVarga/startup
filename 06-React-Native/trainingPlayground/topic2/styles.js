@@ -16,18 +16,21 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   box1: {
-    flex: 5,
+    height: 100,
     width: 100,
+    alignSelf: 'flex-start',
     backgroundColor: 'red',
   },
   box2: {
-    flex: 3,
+    height: 100,
     width: 100,
+    alignSelf: 'center',
     backgroundColor: 'white',
   },
   box3: {
-    flex: 2,
+    height: 100,
     width: 100,
+    alignSelf: 'flex-end',
     backgroundColor: 'purple',
   },
 });
