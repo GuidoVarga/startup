@@ -1,14 +1,16 @@
 /**
  * Created by Guido on 6/11/2018.
  */
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
+
+const backgroundColor = Platform.OS === 'android' ? 'green' : 'grey';
 
 const styles = StyleSheet.create({
 
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#1190FF',
+    backgroundColor: backgroundColor,
     justifyContent: 'space-between',
   },
   box: {
