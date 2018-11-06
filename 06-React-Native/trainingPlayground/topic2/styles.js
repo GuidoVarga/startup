@@ -7,12 +7,12 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#1190FF'
+    flexDirection: 'row',
+    backgroundColor: '#1190FF',
+    justifyContent: 'space-between',
   },
   box: {
     margin: 7,
-    marginBottom: 10,
     borderRadius: 10,
   },
   box1: {
@@ -21,13 +21,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
   },
   box2: {
-    height: 150,
-    width: 150,
+    height: 100,
+    width: 100,
     backgroundColor: 'purple',
   },
   box3: {
-    height: 200,
-    width: 200,
+    height: 100,
+    width: 100,
     borderColor: 'black',
     backgroundColor: 'white',
     alignItems: 'center'
