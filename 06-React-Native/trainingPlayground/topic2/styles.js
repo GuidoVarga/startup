@@ -16,17 +16,17 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   box1: {
-    height: 100,
+    flex: 5,
     width: 100,
     backgroundColor: 'red',
   },
   box2: {
-    height: 100,
+    flex: 3,
     width: 100,
     backgroundColor: 'white',
   },
   box3: {
-    height: 100,
+    flex: 2,
     width: 100,
     backgroundColor: 'purple',
   },
