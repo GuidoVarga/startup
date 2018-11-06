@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
     backgroundColor: '#1190FF',
     justifyContent: 'space-between',
   },
@@ -23,14 +23,12 @@ const styles = StyleSheet.create({
   box2: {
     height: 100,
     width: 100,
-    backgroundColor: 'purple',
+    backgroundColor: 'white',
   },
   box3: {
     height: 100,
     width: 100,
-    borderColor: 'black',
-    backgroundColor: 'white',
-    alignItems: 'center'
+    backgroundColor: 'purple',
   },
 });
 export default styles;
