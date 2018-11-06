@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
   box: {
     margin: 7,
     marginBottom: 10,
+    borderRadius: 10,
   },
   box1: {
     height: 100,
