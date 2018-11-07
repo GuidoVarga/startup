@@ -4,6 +4,7 @@
 import React, {Component} from 'react';
 import {Text, View, TextInput, TouchableOpacity} from 'react-native';
 import styles from './styles';
+import AppTextInput from "./AppTextInput";
 
 class ScreenT3 extends Component {
 
@@ -31,11 +32,12 @@ class ScreenT3 extends Component {
   render() {
     return (
      <View style={styles.container}>
-       <TextInput
+       <AppTextInput
         style={styles.textInput}
         placeholder={'Write something here!'}
         value={this.state.text}
         onChangeText={this.onChangeText}
+        type='password'
        />
        <TouchableOpacity onPress={this.onPressTouchable}>
          <View style={styles.button}>

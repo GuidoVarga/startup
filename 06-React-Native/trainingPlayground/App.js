@@ -11,6 +11,7 @@ import ScreenT1 from './topic1/ScreenT1';
 import ScreenT2 from './topic2/ScreenT2';
 import Article from './topic2/Article';
 import ScreenT3 from "./topic3/ScreenT3";
+import AppTextInput from "./topic3/AppTextInput";
 
 type
 Props = {};
