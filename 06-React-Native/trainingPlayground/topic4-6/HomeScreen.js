@@ -3,14 +3,29 @@
  */
 import React, {Component} from 'react';
 import {Text, View} from 'react-native';
+import AppTouchableOpacity from '../topic3/AppTouchableOpacity'
 
 class HomeScreen extends Component {
+
+  constructor(props){
+    super(props);
+    this.onPressButton = this.onPressButton.bind(this);
+  }
+
+  onPressButton() {
+    this.props.navigation.navigate('Forms2');
+  }
 
 
   render() {
     return (
      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
        <Text>Forms!</Text>
+       <AppTouchableOpacity
+          onPress={this.onPressButton}
+          text="Next"
+          type="secondary"
+       />
      </View>
     );
   }
