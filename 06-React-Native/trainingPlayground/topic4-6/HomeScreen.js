@@ -7,7 +7,7 @@ import AppTouchableOpacity from '../topic3/AppTouchableOpacity'
 
 class HomeScreen extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.onPressButton = this.onPressButton.bind(this);
   }
@@ -22,9 +22,9 @@ class HomeScreen extends Component {
      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
        <Text>Forms!</Text>
        <AppTouchableOpacity
-          onPress={this.onPressButton}
-          text="Next"
-          type="secondary"
+        onPress={this.onPressButton}
+        text="Next"
+        type="secondary"
        />
      </View>
     );
