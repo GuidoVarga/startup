@@ -5,6 +5,7 @@ import React, {Component} from 'react';
 import {Text, View, TextInput, TouchableOpacity} from 'react-native';
 import styles from './styles';
 import AppTextInput from "./AppTextInput";
+import AppTouchableOpacity from "./AppTouchableOpacity";
 
 class ScreenT3 extends Component {
 
@@ -39,13 +40,28 @@ class ScreenT3 extends Component {
         onChangeText={this.onChangeText}
         type='password'
        />
-       <TouchableOpacity onPress={this.onPressTouchable}>
-         <View style={styles.button}>
-           <Text style={styles.buttonText}>
-             Clear text
-           </Text>
-         </View>
-       </TouchableOpacity>
+       <AppTouchableOpacity
+        type="primary"
+        onPress={this.onPressTouchable}
+        text='Primary'
+       />
+       <AppTouchableOpacity
+        type="secondary"
+        onPress={this.onPressTouchable}
+        text='Secondary'
+       />
+       <AppTouchableOpacity
+        type="primary"
+        disabled={true}
+        onPress={this.onPressTouchable}
+        text='Primary disabled'
+       />
+       <AppTouchableOpacity
+        type="secondary"
+        disabled={true}
+        onPress={this.onPressTouchable}
+        text='Secondary disabled'
+       />
      </View>
     );
   }

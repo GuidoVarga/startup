@@ -5,16 +5,30 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-   alignItems:'center',
+    alignItems: 'center',
     paddingTop: 10,
   },
   button: {
     width: 150,
-    height:50,
+    height: 50,
     borderRadius: 10,
     backgroundColor: '#1190FF',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginBottom: 10
+  },
+  secondaryButton: {
+    width: 150,
+    height: 50,
+    borderRadius: 10,
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'white',
+    backgroundColor: undefined
+  },
+  disabledButton: {
+    opacity: 0.5,
   },
   textInput: {
     height: 40,
@@ -26,8 +40,11 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 16,
-    color: 'white',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: 'white'
+  },
+  secondaryButtonText: {
+    color: 'black'
   }
 });
 export default styles;
