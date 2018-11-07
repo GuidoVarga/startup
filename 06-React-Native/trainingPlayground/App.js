@@ -6,19 +6,18 @@
  * @flow
  */
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, ScrollView, Image, Dimensions} from 'react-native';
-import ScreenT1 from './topic1/ScreenT1';
-import ScreenT2 from './topic2/ScreenT2';
-import Article from './topic2/Article';
-import ScreenT3 from "./topic3/ScreenT3";
-import AppTextInput from "./topic3/AppTextInput";
+import  HomeScreen from './topic4-6/HomeScreen';
+import  SecondaryScreen from './topic4-6/SecondaryScreen';
+import {createBottomTabNavigator, createTabNavigator} from 'react-navigation';
 
-type
-Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-     <ScreenT3/>
-    );
-  }
-}
+const App = createBottomTabNavigator({
+   Home: HomeScreen,
+   Secondary: SecondaryScreen,
+ },
+ {
+   tabBarOptions: {
+     activeTintColor: 'red',
+     inactiveTintColor: 'gray',
+   },
+ });
+export default App;
