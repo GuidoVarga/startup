@@ -4,15 +4,13 @@
 import React, {Component} from 'react';
 import {Text, View} from 'react-native';
 
-class HomeScreen extends Component {
-
-
+class Forms3Screen extends Component {
   render() {
     return (
      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-       <Text>Forms!</Text>
+       <Text>Forms 3!</Text>
      </View>
     );
   }
 }
-export default HomeScreen;
+export default Forms3Screen;
