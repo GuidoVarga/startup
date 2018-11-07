@@ -41,8 +41,7 @@ const styles = StyleSheet.create({
     height: 300,
   },
   img2: {
-    height: viewHeight,
-    width: width
+    flex: 1,
   }
 });
 export default  styles;

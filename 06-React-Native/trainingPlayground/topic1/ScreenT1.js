@@ -16,8 +16,9 @@ class ScreenT1 extends Component {
          />
        </View>
        <View style={styles.view2}>
-         <Image style={styles.img2}
-                resizeMode={'cover'}
+         <Image resizeMode={'contain'}
+                resizeMethod={'scale'}
+                style={styles.img2}
                 source={require('../public/images/gaara-vs-sasuke.png')}
          />
        </View>
