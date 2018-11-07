@@ -17,7 +17,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   textInput: {
-    marginBottom: 10
+    height: 40,
+    marginBottom: 10,
+    borderWidth: 1,
+    borderColor: '#48BBEC',
+    borderRadius: 8,
+
   },
   buttonText: {
     fontSize: 16,
