@@ -7,8 +7,8 @@
  */
 import React, {Component} from 'react';
 import  HomeScreen from './topic4-6/HomeScreen';
-import  Forms2Screen from './topic4-6/Posts';
-import  Forms3Screen from './topic4-6/Forms3Screen';
+import  Posts from './topic4-6/Posts';
+import  PostScreen from './topic4-6/PostScreen';
 import  SecondaryScreen from './topic4-6/SecondaryScreen';
 import {createBottomTabNavigator, createStackNavigator} from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -21,8 +21,8 @@ const forms = createStackNavigator({
       header: null
     }),
   },
-  Forms2: Forms2Screen,
-  Forms3: Forms3Screen
+  Posts: Posts,
+  Post: PostScreen
 });
 
 const App = createBottomTabNavigator({

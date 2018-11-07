@@ -94,7 +94,7 @@ class Posts extends Component {
   );
 
   onPressItem = (index, item) => {
-    console.log(item);
+    this.props.navigation.navigate('Post', {post: item});
   };
 
   render() {

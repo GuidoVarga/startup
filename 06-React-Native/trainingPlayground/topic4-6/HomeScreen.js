@@ -13,7 +13,7 @@ class HomeScreen extends Component {
   }
 
   onPressButton() {
-    this.props.navigation.navigate('Forms2');
+    this.props.navigation.navigate('Posts');
   }
 
 
@@ -23,7 +23,7 @@ class HomeScreen extends Component {
        <Text>Forms!</Text>
        <AppTouchableOpacity
         onPress={this.onPressButton}
-        text="Next"
+        text="Posts"
         type="secondary"
        />
      </View>
