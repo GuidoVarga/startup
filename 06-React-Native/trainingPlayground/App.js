@@ -9,10 +9,10 @@ import React, {Component} from 'react';
 import  HomeScreen from './topic4-6/HomeScreen';
 import  Posts from './topic4-6/Posts';
 import  PostScreen from './topic4-6/PostScreen';
-import  SecondaryScreen from './topic4-6/SecondaryScreen';
+import  CameraScreen from './topic4-6/CameraScreen';
+import  PictureScreen from './topic4-6/PictureScreen';
 import {createBottomTabNavigator, createStackNavigator} from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
 
 const forms = createStackNavigator({
   Home: {
@@ -25,9 +25,14 @@ const forms = createStackNavigator({
   Post: PostScreen
 });
 
+const cameraStack = createStackNavigator({
+  Camera: CameraScreen,
+  Picture: PictureScreen
+});
+
 const App = createBottomTabNavigator({
    Forms: forms,
-   Other: SecondaryScreen,
+   Camera: cameraStack,
  },
  {
    navigationOptions: ({navigation}) => ({
@@ -36,8 +41,8 @@ const App = createBottomTabNavigator({
        let iconName;
        if (routeName === 'Forms') {
          iconName = 'ios-home';
-       } else if (routeName === 'Other') {
-         iconName = 'ios-apps';
+       } else if (routeName === 'Camera') {
+         iconName = 'ios-camera';
        }
        return <Ionicons name={iconName} size={27} color={tintColor}/>;
      },
