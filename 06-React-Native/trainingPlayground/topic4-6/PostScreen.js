@@ -19,7 +19,8 @@ class PostScreen extends Component {
 
     this.state = {
       isLoading: false,
-      user: null
+      user: null,
+      error: null
     };
 
     this.onPressButton = this.onPressButton.bind(this);
@@ -47,7 +48,8 @@ class PostScreen extends Component {
      .catch((error) => {
        console.error(error);
        this.setState({
-         isLoading: false
+         isLoading: false,
+         error: error
        });
      });
   }
@@ -60,6 +62,7 @@ class PostScreen extends Component {
     const {post} = this.props.navigation.state.params;
     const {user} = this.state;
     let userInfo = null;
+    const error = this.state.error ? this.state.error : null;
     if (this.state.isLoading) {
       userInfo = <ActivityIndicator size='large'/>
     }
@@ -68,6 +71,7 @@ class PostScreen extends Component {
     }
     return (
      <View>
+       {error}
        {userInfo}
        <View style={styles.separator}/>
        <PostComponent title={post.title} body={post.body}/>

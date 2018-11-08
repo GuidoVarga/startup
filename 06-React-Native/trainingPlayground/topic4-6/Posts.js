@@ -42,7 +42,8 @@ class Posts extends Component {
     super(props);
     this.state = {
       isLoading: false,
-      posts: null
+      posts: null,
+      error: null
     };
 
     this.getPostsFromApi = this.getPostsFromApi.bind(this);
@@ -71,7 +72,8 @@ class Posts extends Component {
      .catch((error) => {
        console.error(error);
        this.setState({
-         isLoading: false
+         isLoading: false,
+         error: error
        });
      });
   }
@@ -95,9 +97,11 @@ class Posts extends Component {
   render() {
     const spinner = this.state.isLoading ?
      <ActivityIndicator size='large'/> : null;
+    const error = this.state.error ? this.state.error : null;
     return (
      <View>
        {spinner}
+       {error}
        <FlatList
         data={this.state.posts}
         keyExtractor={this.keyExtractor}
