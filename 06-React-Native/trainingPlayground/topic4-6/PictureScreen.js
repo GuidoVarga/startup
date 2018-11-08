@@ -2,10 +2,7 @@
  * Created by Guido on 8/11/2018.
  */
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Image, Dimensions} from 'react-native';
-
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
+import {StyleSheet, View, Image} from 'react-native';
 
 class PictureScreen extends Component {
 
@@ -16,16 +13,16 @@ class PictureScreen extends Component {
   render() {
     return (
      <View style={styles.container}>
-       <View style={[{flex:1},{backgroundColor: 'black'},{width: 400}]}>
+       <View style={styles.optionsView}>
        </View>
        <View style={styles.imageContainer}>
          <Image
           style={styles.image}
           resizeMode="cover"
           source={{uri: this.props.navigation.state.params.data.uri}}
-           />
+         />
        </View>
-       <View style={[{flex:1},{backgroundColor: 'black'},{width: 400}]}>
+       <View style={styles.optionsView}>
        </View>
      </View>
     );
@@ -39,10 +36,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   imageContainer: {
-    flex:8,
+    flex: 8,
     width: 400,
   },
   image: {
-    flex:1
+    flex: 1
+  },
+  optionsView: {
+    flex: 1,
+    backgroundColor: 'black',
+    width: 400
   }
 });
