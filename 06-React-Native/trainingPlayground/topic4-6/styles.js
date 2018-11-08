@@ -21,6 +21,26 @@ const styles = StyleSheet.create({
   },
   postContainer: {
     padding: 10
+  },
+  userInfo: {
+    padding: 10,
+  },
+  infoTitle: {
+    fontSize: 19,
+    fontWeight: 'bold',
+    alignSelf: 'center',
+    marginBottom: 10
+  },
+  personalInfo: {
+    flexDirection: 'row',
+    marginBottom: 10
+  },
+  infoText: {
+    fontSize: 13
+  },
+  infoTextTitle: {
+    fontSize: 13,
+    fontWeight: 'bold'
   }
 });
 export default styles;
