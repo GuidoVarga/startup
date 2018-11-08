@@ -16,7 +16,6 @@ class HomeScreen extends Component {
     this.props.navigation.navigate('Posts');
   }
 
-
   render() {
     return (
      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>

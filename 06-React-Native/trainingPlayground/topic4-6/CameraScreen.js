@@ -12,6 +12,13 @@ class CameraScreen extends Component {
     header: null
   };
 
+  constructor(props){
+    super(props);
+    this.state = {
+      isTakenPicture: false
+    };
+  }
+
   render() {
     return (
      <View style={styles.container}>
@@ -21,7 +28,7 @@ class CameraScreen extends Component {
         }}
         style={styles.preview}
         type={RNCamera.Constants.Type.back}
-        flashMode={RNCamera.Constants.FlashMode.on}
+        flashMode={RNCamera.Constants.FlashMode.off}
         permissionDialogTitle={'Permission to use camera'}
         permissionDialogMessage={'We need your permission to use your camera phone'}
         onGoogleVisionBarcodesDetected={({barcodes}) => {
@@ -32,6 +39,7 @@ class CameraScreen extends Component {
          <TouchableOpacity
           onPress={this.takePicture.bind(this)}
           style={styles.capture}
+          disabled={this.state.isTakenPicture}
          >
            <Ionicons name='ios-camera' size={40} color='black'/>
          </TouchableOpacity>
@@ -42,9 +50,13 @@ class CameraScreen extends Component {
 
   takePicture = async function () {
     if (this.camera) {
-      const options = {quality: 1, base64: true};
-      const data = await this.camera.takePictureAsync(options)
-      console.log(data.uri);
+      const options = {quality: 1};
+      this.setState({
+        isTakenPicture:true
+      });
+      this.camera.takePictureAsync(options).then( data => {
+        this.props.navigation.navigate('Picture',{data:data});
+      });
     }
   };
 }
