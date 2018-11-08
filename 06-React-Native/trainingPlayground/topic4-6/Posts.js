@@ -4,7 +4,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, ActivityIndicator, FlatList, TouchableHighlight} from 'react-native';
 import styles from './styles';
-
+import PostComponent from './PostComponent';
 
 class ListItem extends Component {
 
@@ -24,12 +24,7 @@ class ListItem extends Component {
       onPress={this.onPress}
       underlayColor='#dddddd'>
        <View>
-         <View style={styles.postContainer}>
-           <Text style={styles.title}>{item.title}</Text>
-           <View style={styles.textContainer}>
-             <Text style={styles.body}>{item.body}</Text>
-           </View>
-         </View>
+         <PostComponent title={item.title} body={item.body}/>
          <View style={styles.separator}/>
        </View>
      </TouchableHighlight>

@@ -4,7 +4,7 @@
 import React, {Component} from 'react';
 import {Text, View} from 'react-native';
 import {StackActions} from 'react-navigation';
-import styles from './styles';
+import PostComponent from './PostComponent';
 
 class PostScreen extends Component {
 
@@ -25,12 +25,7 @@ class PostScreen extends Component {
     const {post} = this.props.navigation.state.params;
     return (
      <View>
-       <View style={styles.postContainer}>
-         <Text style={styles.title}>{post.title}</Text>
-         <View style={styles.textContainer}>
-           <Text style={styles.body}>{post.body}</Text>
-         </View>
-       </View>
+       <PostComponent title={post.title} body={post.body}/>
      </View>
     );
   }
